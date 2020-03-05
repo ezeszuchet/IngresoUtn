@@ -117,32 +117,24 @@ function mostrar(){
 }
 
 //6.
-function mostrar(){
-    var hora;
 
-    hora = document.getElementById('laHora').value;
+    
+function mostrar(hora){
+
+    var hora = document.getElementById('laHora').value;
     hora = parseInt(hora);
-
-    switch (hora) {
-        case 6:
+    
+    switch (true) {
+        case (hora > 6 && hora < 12):
             alert("Es de mañana");
             break;
 
-        case 12:
+        case (hora > 12 && hora < 19):
             alert("Es de tarde");
             break;
     
         default:
-            if(hora < 0 || hora > 24){
-                alert("Hora no valida");
-            }
-            else if(hora > 19 && hora < 24){
-                alert("Es de noche");
-            }
-            else if(hora > 1 && hora < 6){
-                alert("Es de noche");
-            }
-                
+            alert("Hora no valida");
             break;
     }
 }
